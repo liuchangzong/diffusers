@@ -359,7 +359,7 @@ class LCMScheduler(SchedulerMixin, ConfigMixin):
 
         # 1. Calculate the LCM original training/distillation timestep schedule.
         original_steps = (
-            original_inference_steps if original_inference_steps is not None else self.config.original_inference_steps
+            original_inference_steps if self.config.original_inference_steps is not None else original_inference_steps
         )
 
         if original_steps > self.config.num_train_timesteps:
